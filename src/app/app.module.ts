@@ -5,11 +5,13 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material';
 import { BooksComponent } from './books/books.component';
+import { BookDetailComponent } from './book-detail/book-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BooksComponent
+    BooksComponent,
+    BookDetailComponent
   ],
   imports: [
     BrowserModule,

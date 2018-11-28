@@ -36,9 +36,6 @@
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
 
-<hr>
+<hr> 
 
-<div *ngIf="selectedBook">
-    <h2 class="mat-h2">'{{selectedBook.name}}' Book Description: </h2>
-  <p class="mat-body">{{selectedBook.description}}</p>
-</div>
+<app-book-detail [book]="selectedBook"></app-book-detail>
