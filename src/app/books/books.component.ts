@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
 import { Book } from '../book';
-import { BOOKS } from '../mock-books';
+import { BookService } from '../book.service';
 
 @Component({
   selector: 'app-books',
@@ -9,13 +9,21 @@ import { BOOKS } from '../mock-books';
   styleUrls: ['./books.component.css']
 })
 export class BooksComponent implements OnInit {
+  books: Book[];
   displayedColumns: string[] = ['id', 'name', 'views', 'actions'];
-  dataSource = new MatTableDataSource(BOOKS);
+  dataSource = null;
   selectedBook: Book = null;
 
-  constructor() { }
+  constructor(private bookService: BookService) { }
 
   ngOnInit() {
+    this.getBooks();
+    this.dataSource = new MatTableDataSource(this.books);
+  }
+
+  getBooks(): void {
+    this.bookService.getBooks()
+      .subscribe(books => this.books = books);
   }
 
   filterBooks(filterValue: string) {
