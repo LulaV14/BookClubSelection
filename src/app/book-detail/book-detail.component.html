@@ -1,4 +1,23 @@
-<div *ngIf="book">
-    <h2 class="mat-h2">'{{book.name}}' Book Description: </h2>
-  <p class="mat-body">{{book.description}}</p>
+<div class="book-detail" *ngIf="book">
+  <!-- <h2 class="mat-h2">'{{book.name}}' Book Description: </h2>
+  <p class="mat-body">{{book.description}}</p> -->
+
+  <h2 class="mat-h2">Book Detail</h2>
+  <mat-list>
+    <mat-list-item>
+      <label><span>Name: </span>{{book.name}} </label>
+    </mat-list-item>
+    <mat-list-item>
+      <label><span>Views: </span>{{book.views}} </label>
+    </mat-list-item>
+    <mat-list-item>
+      <label><span>Description: </span></label>
+      <p>{{book.description}}</p>
+    </mat-list-item>
+  </mat-list>
+
+  <hr> 
+
+  <button mat-raised-button (click)="goBack()">Go Back</button>
+  
 </div>

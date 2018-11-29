@@ -5,4 +5,9 @@
   </h1>
 </div>
 
-<app-books></app-books>
+<nav class="navigator">
+  <button mat-raised-button color="primary" routerLink="/dashboard">Dashboard</button>
+  <button mat-raised-button color="primary" routerLink="/books">Books</button>
+</nav>
+
+<router-outlet></router-outlet>

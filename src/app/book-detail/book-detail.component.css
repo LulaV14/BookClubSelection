@@ -1,0 +1,8 @@
+.book-detail {
+  margin: 40px;
+}
+
+label span {
+  font-weight: bold;
+  margin-right: 5px;
+}

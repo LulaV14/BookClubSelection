@@ -12,7 +12,6 @@ export class BooksComponent implements OnInit {
   books: Book[];
   displayedColumns: string[] = ['id', 'name', 'views', 'actions'];
   dataSource = null;
-  selectedBook: Book = null;
 
   constructor(private bookService: BookService) { }
 
@@ -28,11 +27,6 @@ export class BooksComponent implements OnInit {
 
   filterBooks(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
-
-  // TODO change to own details page
-  showDetails(book: Book) {
-    this.selectedBook = book;
   }
 
 }
